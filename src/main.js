@@ -60,6 +60,16 @@ function addStar() {
 
 Array(200).fill().forEach(addStar);
 
+// Background
+
+const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+scene.background = spaceTexture;
+
+// Avatar
+
+const fredTexture = new THREE.TextureLoader().load('fredshine.PNG');
+const fred = new THREE.Mesh(new THREE.BoxGeometry(10, 10, 10), new THREE.MeshBasicMaterial({ map: fredTexture }));
+scene.add(fred);
 
 function animate() {
   requestAnimationFrame(animate);
